@@ -1,0 +1,50 @@
+<svg width="512" height="512" viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg">
+  <!-- Background -->
+  <rect x="0" y="0" width="512" height="512" rx="48" fill="#0e1116"/>
+
+  <!-- Neon glow -->
+  <rect x="24" y="24" width="464" height="464" rx="36"
+        stroke="#2cf3ff" stroke-width="4" opacity="0.25" fill="none"/>
+
+  <!-- Alien head -->
+  <ellipse cx="256" cy="220" rx="78" ry="88" fill="#3bb6a5"/>
+
+  <!-- Alien eyes -->
+  <circle cx="230" cy="210" r="10" fill="#0e1116"/>
+  <circle cx="256" cy="200" r="12" fill="#0e1116"/>
+  <circle cx="282" cy="210" r="10" fill="#0e1116"/>
+
+  <!-- Coffee cup -->
+  <rect x="315" y="255" width="26" height="32" rx="4" fill="#d9d3c7"/>
+  <path d="M341 262 h10 a8 8 0 0 1 0 18 h-10"
+        fill="none" stroke="#d9d3c7" stroke-width="4"/>
+
+  <!-- Body -->
+  <rect x="196" y="290" width="120" height="88" rx="18" fill="#2a3b42"/>
+
+  <!-- Arms -->
+  <rect x="160" y="300" width="48" height="16" rx="8" fill="#3bb6a5"/>
+  <rect x="304" y="300" width="48" height="16" rx="8" fill="#3bb6a5"/>
+
+  <!-- Holographic screen -->
+  <rect x="180" y="350" width="152" height="64" rx="10"
+        fill="#0ff" opacity="0.15" stroke="#2cf3ff" stroke-width="2"/>
+
+  <!-- Code lines -->
+  <line x1="196" y1="370" x2="290" y2="370"
+        stroke="#2cf3ff" stroke-width="3"/>
+  <line x1="196" y1="386" x2="270" y2="386"
+        stroke="#2cf3ff" stroke-width="3"/>
+  <line x1="196" y1="402" x2="310" y2="402"
+        stroke="#2cf3ff" stroke-width="3"/>
+
+  <!-- Hanging wires -->
+  <path d="M90 0 v120 c0 24 24 24 24 48"
+        stroke="#4a5a60" stroke-width="4" fill="none"/>
+  <path d="M420 0 v160 c0 20 -20 20 -20 40"
+        stroke="#4a5a60" stroke-width="4" fill="none"/>
+
+  <!-- Broken window light -->
+  <polygon points="420,120 512,80 512,260"
+           fill="#ffffff" opacity="0.04"/>
+</svg>

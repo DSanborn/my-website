@@ -1,0 +1,198 @@
+/* App.css - condensed + animated glow */
+
+/* 1️⃣ Reset & full viewport */
+html,
+body,
+#root {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden; /* prevent scroll */
+  font-family: 'Arial', sans-serif;
+  background: #000;
+  color: white;
+}
+
+/* 2️⃣ Layout wrapper */
+.layout {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  width: 100vw;
+  background:
+    linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+    url('./assets/background.png') center / cover no-repeat;
+  background-attachment: fixed;
+
+  /* subtle pulsing overlay */
+  position: relative;
+}
+
+.layout::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(circle at center, rgba(0, 255, 255, 0.15), transparent 70%);
+  animation: pulse-bg 6s infinite alternate;
+  pointer-events: none; /* don't block clicks */
+}
+
+/* 3️⃣ Header / Navbar */
+.layout-header {
+  position: sticky;
+  top: 0;
+  z-index: 50;
+  background: rgba(0, 0, 0, 0.6);
+  backdrop-filter: blur(10px);
+  padding: 1rem 2rem;
+  box-shadow: 0 0 20px rgba(0, 255, 255, 0.2);
+}
+
+/* Navbar styling */
+.navbar ul {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.navbar a {
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 1.1rem;
+  color: #0ff;
+  position: relative;
+  transition: all 0.3s ease;
+}
+
+/* Glow underline effect */
+.navbar a::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: -4px;
+  width: 100%;
+  height: 2px;
+  background: #0ff;
+  box-shadow:
+    0 0 10px #0ff,
+    0 0 20px #0ff;
+  transform: scaleX(0);
+  transform-origin: right;
+  transition: transform 0.3s ease;
+}
+
+.navbar a:hover::after,
+.navbar a.active::after {
+  transform: scaleX(1);
+  transform-origin: left;
+}
+
+/* Text glow on hover + animated glow pulse */
+.navbar a:hover {
+  color: #0ff;
+  text-shadow:
+    0 0 5px #0ff,
+    0 0 10px #0ff,
+    0 0 20px #0ff;
+  animation: glow-pulse 2s infinite alternate;
+}
+
+.navbar .brand a {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #0ff;
+  text-shadow:
+    0 0 5px #0ff,
+    0 0 10px #0ff;
+}
+
+/* 4️⃣ Main content */
+.layout-content {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 2rem;
+  position: relative;
+  z-index: 1; /* make sure overlay doesn't cover content */
+}
+
+/* 5️⃣ Footer */
+.layout-footer {
+  text-align: center;
+  padding: 1rem;
+  background-color: rgba(0, 0, 0, 0.7);
+}
+
+/* 6️⃣ Logo animation */
+.logo {
+  height: 6em;
+  padding: 1.5em;
+  will-change: filter;
+  transition: filter 300ms;
+}
+
+.logo:hover {
+  filter: drop-shadow(0 0 2em #646cffaa);
+}
+
+.logo.react:hover {
+  filter: drop-shadow(0 0 2em #61dafbaa);
+}
+
+@keyframes logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  a:nth-of-type(2) .logo {
+    animation: logo-spin infinite 20s linear;
+  }
+}
+
+/* 7️⃣ Optional card styling */
+.card {
+  padding: 2rem;
+  background: rgba(0, 0, 0, 0.5);
+  border-radius: 0.5rem;
+}
+
+/* 8️⃣ Animations */
+
+/* subtle radial pulse on background */
+@keyframes pulse-bg {
+  from {
+    transform: scale(1);
+    opacity: 0.15;
+  }
+  to {
+    transform: scale(1.05);
+    opacity: 0.25;
+  }
+}
+
+/* navbar text glow pulse */
+@keyframes glow-pulse {
+  from {
+    text-shadow:
+      0 0 5px #0ff,
+      0 0 10px #0ff,
+      0 0 20px #0ff;
+  }
+  to {
+    text-shadow:
+      0 0 10px #0ff,
+      0 0 20px #0ff,
+      0 0 30px #0ff;
+  }
+}
