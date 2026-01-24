@@ -1,12 +1,14 @@
 // Navbar.jsx
-import './App.css'
+import './Navbar.css'
+import { APP_CONFIG } from '@/constants/appConfig'
+
 
 export default function Navbar() {
   return (
     <nav className="navbar">
       <ul>
         <li className="brand">
-          <a href="/">Byte Bomb</a>
+          <a href="/">{APP_CONFIG.name}</a>
         </li>
         <li>
           <a href="/">Home</a>

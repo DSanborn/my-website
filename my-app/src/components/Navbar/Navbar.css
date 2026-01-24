@@ -1,0 +1,86 @@
+.layout-header {
+  position: sticky;
+  top: 0;
+  z-index: 50;
+
+  background: rgba(0, 0, 0, 0.6);
+  backdrop-filter: blur(10px);
+
+  padding: 0 2rem; /* horizontal padding only */
+  height: 60px; /* standard height */
+  display: flex;
+  align-items: center; /* vertical center of contents */
+  justify-content: flex-start; /* everything left-aligned */
+  box-shadow: 0 0 20px rgba(0, 255, 255, 0.2);
+  gap: 1.5rem; /* space between logo and nav */
+}
+
+/* optional inner wrapper if you want more control */
+.header-left {
+  display: flex;
+  align-items: center;
+}
+
+.header-right {
+  display: flex;
+  align-items: center;
+}
+
+.navbar ul {
+  display: flex;
+  gap: 2rem;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.navbar a {
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 1.1rem;
+  color: #0ff;
+  position: relative;
+  transition: all 0.3s ease;
+}
+
+.navbar .brand a {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #0ff;
+  text-shadow:
+    0 0 5px #0ff,
+    0 0 10px #0ff;
+}
+
+/* Glow underline effect */
+.navbar a::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: -4px;
+  width: 100%;
+  height: 2px;
+  background: #0ff;
+  box-shadow:
+    0 0 10px #0ff,
+    0 0 20px #0ff;
+  transform: scaleX(0);
+  transform-origin: right;
+  transition: transform 0.3s ease;
+}
+
+.navbar a:hover::after,
+.navbar a.active::after {
+  transform: scaleX(1);
+  transform-origin: left;
+}
+
+/* Text glow on hover + animated glow pulse */
+.navbar a:hover {
+  color: #0ff;
+  text-shadow:
+    0 0 5px #0ff,
+    0 0 10px #0ff,
+    0 0 20px #0ff;
+  animation: glow-pulse 2s infinite alternate;
+}

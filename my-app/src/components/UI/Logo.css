@@ -1,0 +1,35 @@
+.logo {
+  height: 3rem; /* standard navbar logo height */
+  max-height: 100%; /* ensure it never grows past navbar */
+  width: auto; /* keep aspect ratio */
+  object-fit: contain; /* fit inside bounding box */
+  transition:
+    filter 0.3s ease,
+    transform 0.3s ease;
+  will-change: filter, transform;
+}
+
+/* Neon glow on hover */
+.logo:hover {
+  filter: drop-shadow(0 0 0.5em #0ff) drop-shadow(0 0 1em #0ff99);
+  transform: scale(1.05);
+}
+
+/* Optional pulse animation */
+@keyframes neon-pulse {
+  0% {
+    filter: drop-shadow(0 0 0.3em #0ff);
+  }
+  50% {
+    filter: drop-shadow(0 0 1em #0ff);
+  }
+  100% {
+    filter: drop-shadow(0 0 0.3em #0ff);
+  }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .logo {
+    animation: neon-pulse 3s infinite alternate;
+  }
+}
