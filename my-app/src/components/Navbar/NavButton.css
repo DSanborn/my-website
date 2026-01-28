@@ -1,0 +1,144 @@
+/* ============================= */
+/* DROPDOWN TOGGLE (BUTTON) */
+/* ============================= */
+
+.dropdown-toggle {
+  all: unset; /* reset native button styles */
+  cursor: pointer;
+
+  font-weight: bold;
+  font-size: 1.1rem;
+  color: #0ff;
+  position: relative;
+  transition: all 0.3s ease;
+}
+
+/* Glow underline (same as navbar links) */
+.dropdown-toggle::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: -4px;
+  width: 100%;
+  height: 2px;
+
+  background: #0ff;
+  box-shadow:
+    0 0 10px #0ff,
+    0 0 20px #0ff;
+
+  transform: scaleX(0);
+  transform-origin: right;
+  transition: transform 0.3s ease;
+}
+
+/* Hover + open state */
+.dropdown-toggle:hover,
+.dropdown-toggle[aria-expanded='true'] {
+  color: #0ff;
+  text-shadow:
+    0 0 5px #0ff,
+    0 0 10px #0ff,
+    0 0 20px #0ff;
+  animation: glow-pulse 2s infinite alternate;
+}
+
+.dropdown-toggle:hover::after,
+.dropdown-toggle[aria-expanded='true']::after {
+  transform: scaleX(1);
+  transform-origin: left;
+}
+
+/* Caret rotation */
+.dropdown-toggle::before {
+  content: '▾';
+  margin-left: 0.25rem;
+  display: inline-block;
+  transition: transform 0.3s ease;
+}
+
+.dropdown-toggle[aria-expanded='true']::before {
+  transform: rotate(180deg);
+}
+
+/* ============================= */
+/* DROPDOWN MENU VISIBILITY */
+/* ============================= */
+
+.dropdown-menu {
+  display: none;
+}
+
+.dropdown-menu.open {
+  display: flex;
+  flex-direction: column;
+}
+
+/* ============================= */
+/* DROPDOWN ITEMS (STABLE) */
+/* ============================= */
+
+.dropdown-menu li {
+  margin: 0;
+  padding: 0.6rem 1rem; /* row height */
+}
+
+.dropdown-menu a {
+  display: block;
+  width: 100%;
+  padding: 0;
+
+  color: #0ff;
+  text-decoration: none;
+  line-height: 1;
+
+  text-shadow:
+    0 0 6px #0ff,
+    0 0 14px rgba(0, 255, 255, 0.6);
+
+  position: relative;
+  transition:
+    color 1.2s ease,
+    text-shadow 1.2s ease;
+}
+
+/* Underline */
+.dropdown-menu a::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: -6px;
+  width: 100%;
+  height: 2px;
+
+  background: #0ff;
+  box-shadow:
+    0 0 8px #0ff,
+    0 0 16px rgba(0, 255, 255, 0.6);
+
+  transform: scaleX(0);
+  transform-origin: left;
+  transition:
+    transform 0.4s ease,
+    background 1.5s ease,
+    box-shadow 1.5s ease;
+}
+
+/* Hover = neon green */
+.dropdown-menu a:hover {
+  color: #39ff14;
+
+  text-shadow:
+    0 0 6px #39ff14,
+    0 0 14px #66ff33,
+    0 0 28px rgba(57, 255, 20, 0.9);
+}
+
+.dropdown-menu a:hover::after {
+  transform: scaleX(1);
+
+  background: #39ff14;
+  box-shadow:
+    0 0 10px #39ff14,
+    0 0 22px #66ff33;
+}

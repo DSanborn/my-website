@@ -13,9 +13,10 @@
   cursor: pointer;
   overflow: hidden;
   transition:
-    color 0.3s ease,
-    box-shadow 0.3s ease,
-    border-color 0.3s ease;
+    color 0.6s ease,
+    border-color 0.6s ease,
+    box-shadow 0.6s ease;
+  transition-delay: 0s;
   box-shadow:
     0 0 5px #0ff,
     0 0 10px #0ff,
@@ -39,27 +40,31 @@
   );
   transform: skewX(-20deg);
   pointer-events: none;
+  opacity: 1;
   animation: shine 2s linear infinite;
+  transition: opacity 0.6s ease;
 }
 
 /* Hover: switch streak to neon red and text/glow too */
 .neon-button:hover {
-  color: #ff0000; /* neon red text */
-  border-color: #ff0000;
+  color: #ff9f1a; /* neon orange text */
+  border-color: #ff9f1a;
+
   box-shadow:
-    0 0 5px #ff0000,
-    0 0 10px #ff0000,
-    0 0 20px #ff3333,
-    0 0 40px #ff5555;
+    0 0 6px #ff7a00,
+    0 0 14px #ffb347,
+    0 0 28px rgba(255, 160, 60, 0.9);
+  transition-delay: 0.1s;
+  transition-duration: 1.2s;
 }
 
 /* On hover, change the gradient of the streak */
 .neon-button:hover::before {
   background: linear-gradient(
     120deg,
-    rgba(255, 0, 0, 0) 0%,
-    rgba(255, 0, 0, 0.5) 50%,
-    rgba(255, 0, 0, 0) 100%
+    rgba(255, 140, 0, 0) 0%,
+    rgba(255, 160, 60, 0.55) 50%,
+    rgba(255, 140, 0, 0) 100%
   );
 }
 
