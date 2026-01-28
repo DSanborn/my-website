@@ -35,13 +35,7 @@ export default function Navbar() {
           {/* dropdown */}
           <ul className={`dropdown-menu ${open ? 'open' : ''}`}>
             <li>
-              <a href="/web">Web Dev</a>
-            </li>
-            <li>
-              <a href="/mobile">Mobile Apps</a>
-            </li>
-            <li>
-              <a href="/uiux">UI / UX</a>
+              <a href="/web">ABCs</a>
             </li>
           </ul>
         </li>
