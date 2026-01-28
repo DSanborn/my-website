@@ -12,6 +12,15 @@
   z-index: 1;
 }
 
+.hero-content {
+  background: rgba(0, 0, 0, 0.6); /* transparent black */
+  backdrop-filter: blur(10px); /* optional blur */
+  padding: 2rem 3rem;
+  border-radius: 12px;
+  text-align: center;
+  box-shadow: 0 0 20px rgba(0, 255, 255, 0.2); /* subtle neon glow */
+}
+
 .hero h1 {
   font-size: 3rem;
   margin: 0 0 1rem;

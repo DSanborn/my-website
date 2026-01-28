@@ -1,13 +1,22 @@
-import { APP_CONFIG } from '@/constants/appConfig'
+// src/components/Hero/Hero.tsx
 import './Hero.css'
 import NeonButton from '@/components/UI/NeonButton'
 
-export default function Hero() {
+interface HeroProps {
+  title: string
+  subtitle: string
+  buttonText?: string
+  buttonHref?: string
+}
+
+export default function Hero({ title, subtitle, buttonText, buttonHref }: HeroProps) {
   return (
     <section className="hero">
-      <h1>{APP_CONFIG.name}</h1>
-      <p>Your project deserves a hacker with style — freelance software engineering made simple.</p>
-      <NeonButton>Work With Me</NeonButton>
+      <div className="hero-content">
+        <h1>{title}</h1>
+        <p>{subtitle}</p>
+        {buttonText && buttonHref && <NeonButton href={buttonHref}>{buttonText}</NeonButton>}
+      </div>
     </section>
   )
 }
