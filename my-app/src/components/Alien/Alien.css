@@ -1,0 +1,69 @@
+.alien {
+  position: fixed;
+  top: 0;
+  left: -100px; /* start offscreen */
+  width: 100px;
+  height: 100px;
+  z-index: 999;
+  animation:
+    crawl 10s linear infinite,
+    wiggle 0.5s ease-in-out infinite alternate;
+  cursor: pointer;
+  pointer-events: auto;
+}
+
+.alien img {
+  width: 100%;
+  height: auto;
+}
+
+/* Crawl across the page in a wavy pattern */
+@keyframes crawl {
+  0% {
+    transform: translateX(-100px) translateY(0);
+  }
+  25% {
+    transform: translateX(150px) translateY(10px);
+  }
+  50% {
+    transform: translateX(400px) translateY(-5px);
+  }
+  75% {
+    transform: translateX(650px) translateY(15px);
+  }
+  100% {
+    transform: translateX(100vw) translateY(0);
+  }
+}
+
+/* Slight rotation to simulate crawling motion */
+@keyframes wiggle {
+  0% {
+    transform: rotate(0deg);
+  }
+  50% {
+    transform: rotate(5deg);
+  }
+  100% {
+    transform: rotate(-5deg);
+  }
+}
+
+/* Hover effect: alien waves */
+.alien.hovered {
+  animation:
+    crawl 10s linear infinite paused,
+    wave 0.5s ease-in-out infinite alternate;
+}
+
+@keyframes wave {
+  0% {
+    transform: rotate(0deg);
+  }
+  50% {
+    transform: rotate(15deg);
+  }
+  100% {
+    transform: rotate(-15deg);
+  }
+}

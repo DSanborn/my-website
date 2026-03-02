@@ -2,8 +2,9 @@
 import type { ReactNode } from 'react'
 import './Layout.css'
 import '@/css/Animations.css'
-import Navbar from '@/components/Navbar/Navbar'
 import Logo from '@/components/UI/Logo'
+import Alien from '../Alien/Alient'
+import Navbar from '@/components/Navbar/Navbar'
 import { APP_CONFIG } from '@/constants/appConfig'
 
 export default function Layout({ children }: { children: ReactNode }) {
@@ -15,6 +16,7 @@ export default function Layout({ children }: { children: ReactNode }) {
         </div>
         <div className="header-right">
           <Navbar />
+          <Alien />
         </div>
       </header>
       <main className="layout-content">{children}</main>
