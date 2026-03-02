@@ -12,6 +12,7 @@
     "allowSyntheticDefaultImports": true,
     "resolveJsonModule": true,
     "verbatimModuleSyntax": true,
+    "noEmit": true,
 
     /* Path alias for cleaner imports */
     "baseUrl": ".",

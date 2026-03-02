@@ -1,3 +1,7 @@
+# Ignore JS files generated from TypeScript
+**/*.js
+**/*.js.map
+
 # Logs
 logs
 *.log
