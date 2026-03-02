@@ -2,6 +2,9 @@
 **/*.js
 **/*.js.map
 
+.firebase/
+.firebase/hosting.*.cache
+
 # Logs
 logs
 *.log

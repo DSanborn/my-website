@@ -7,7 +7,10 @@ import svgr from 'vite-plugin-svgr'
 
 // https://vite.dev/config/
 export default defineConfig({
-  plugins: [react(), tsconfigPaths(), svgr()],
+  plugins: [react(),
+    tsconfigPaths(),
+    svgr(),
+  ],
   resolve: {
     alias: {
       '@': path.resolve(__dirname, 'src'),

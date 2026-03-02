@@ -1,10 +1,12 @@
-import LogoSVG from '@/assets/icon.svg'
-import './Logo.css'
+import LogoSVG from '@/assets/icon.svg';
+import './Logo.css';
 
 export default function Logo() {
   return (
-    <span role="img" aria-label="Logo">
-      <LogoSVG className="logo neon-logo" />
-    </span>
-  )
+    <img
+      src={LogoSVG}
+      className="logo-wrapper"
+      alt="Logo"
+    />
+  );
 }
